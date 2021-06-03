@@ -3,6 +3,7 @@ from tkinter import *
 
 
 
+
 class Application:
     #Layout
     def __init__(self, parent):
@@ -37,6 +38,14 @@ class Application:
         self.cadastrar["command"] = self.open_cadastroProdutos
         self.cadastrar.grid(row=7, column=1, pady=10, sticky=W)
 
+        #Button4
+        self.cadastrar = Button()
+        self.cadastrar["text"] = "Consulta Cadastro Clientes"
+        self.cadastrar["font"] = ("Calibri", "8")
+        self.cadastrar["width"] = 20
+        self.cadastrar["command"] = self.consulta_tabela_clientes
+        self.cadastrar.grid(row=8, column=1, pady=10, sticky=W)
+
 
     def open_cadastroClientes(new):
         startfile("_cadastroClientes.pyw")
@@ -47,7 +56,8 @@ class Application:
     def open_cadastroProdutos(new):
         startfile("_cadastroProdutos.pyw")        
 
-
+    def consulta_tabela_clientes(new):
+        startfile("_consultaTabela.pyw")
         
 
 

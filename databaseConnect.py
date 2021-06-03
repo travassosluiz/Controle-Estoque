@@ -74,6 +74,7 @@ def picklist_table_columns(table):
         pos += 1
     return lista_table_columns
 
+
 def picklist_fornecedores():
     c.execute("SELECT nome FROM fornecedores")
     lista_table_columns = c.fetchall()
@@ -86,8 +87,17 @@ def picklist_fornecedores():
     return lista_table_columns
 
 
+def table_contents(table):
+    #Retorna o conteúdo da tabela definida no parâmetro 'table'
+    c.execute("SELECT * FROM '"+table+"'")
+    contents = c.fetchall()
+    return contents
+
+
+
 #Testes
 #insert_clientes('nome', 'telefone', 'endereco', 'segmento')
 #insert_fornecedores('nome', 'nome_contato', 'telefone', 'endereco', 'segmento')
 #insert_produtos('id_fornecedor', 'codigo_item', 'descricao', 'linha', 'categoria')
 #insert_estoque('id_produto', 'id_fatura', 'quantidade', 'valor_custo_unit', 'valor_venda_unit')
+#print(table_contents("Clientes"))
