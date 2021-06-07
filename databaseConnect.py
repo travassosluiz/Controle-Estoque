@@ -94,6 +94,18 @@ def table_contents(table):
     return contents
 
 
+def consulta_tabela(number, table):
+    #Consulta cliente ou fornecedor pelo número
+    c.execute("SELECT nome FROM "+table+" WHERE oid = " +number)
+    lista_table_columns = c.fetchall()
+
+    pos=0
+    final=len(lista_table_columns)
+    while pos < final:
+        elemento = lista_table_columns[pos]
+        lista_table_columns[pos] = elemento[0]
+        pos += 1
+    return lista_table_columns
 
 #Testes
 #insert_clientes('nome', 'telefone', 'endereco', 'segmento')
