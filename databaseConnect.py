@@ -94,11 +94,10 @@ def table_contents(table):
     return contents
 
 
-def consulta_tabela(number, table):
-    #Consulta cliente ou fornecedor pelo número
-    c.execute("SELECT nome FROM "+table+" WHERE oid = " +number)
+def consulta_tabela(number, table, coluna):
+    #Consulta nome cliente ou fornecedor pelo número
+    c.execute("SELECT "+coluna+" FROM "+table+" WHERE oid = " +number)
     lista_table_columns = c.fetchall()
-
     pos=0
     final=len(lista_table_columns)
     while pos < final:
@@ -107,9 +106,12 @@ def consulta_tabela(number, table):
         pos += 1
     return lista_table_columns
 
+    
+
 #Testes
 #insert_clientes('nome', 'telefone', 'endereco', 'segmento')
 #insert_fornecedores('nome', 'nome_contato', 'telefone', 'endereco', 'segmento')
 #insert_produtos('id_fornecedor', 'codigo_item', 'descricao', 'linha', 'categoria')
 #insert_estoque('id_produto', 'id_fatura', 'quantidade', 'valor_custo_unit', 'valor_venda_unit')
 #print(table_contents("Clientes"))
+#print(consulta_tabela('1', 'clientes', 'segmento'))
