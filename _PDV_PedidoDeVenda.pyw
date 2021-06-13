@@ -77,73 +77,47 @@ class Application:
             self.tableLabel.grid(row= 8, column=x, sticky='NSWE')
 
             #Especial linhas 9 a 28
- 
+
         for x in range(20):
             self.tableLabel = Label(text=[x+1], font=("Arial", "8", "bold"), background='gray80')
             self.tableLabel.grid(row= 9+x, column=0, sticky='WE')
             
-            self.itemCod = Entry(textvariable=exec('sic'+str(x+1)), validate="focusout", validatecommand=self.consultaCliente)
-            self.itemCod["width"] = 15
-            self.itemCod["font"] = self.fontePadrao
-            self.itemCod.grid(row=9+x, column=1, sticky='NSWE')
-    
-            self.itemDesc = Text(height=1 ,background='gray80', foreground='grey25', relief=FLAT, font=self.fontePadrao)
-            self.itemDesc["width"] = 30
-            self.itemDesc.insert('insert', "Teste")
-            self.itemDesc.grid(row=9+x, column=2, sticky='NSWE')
-            self.itemDesc["state"] = DISABLED
+        #Texts:
+        self.itemDesc1 = Text(height=1 ,background='gray80', foreground='grey25', relief=FLAT, font=self.fontePadrao, width=30, state=DISABLED)
+        self.itemDesc1.grid(row=9, column=2, sticky='NSWE')
 
-            self.itemLinha = Text(height=1 ,background='gray80', foreground='grey25', relief=FLAT, font=self.fontePadrao)
-            self.itemLinha["width"] = 15
-            self.itemLinha.insert('insert', "Teste")
-            self.itemLinha.grid(row=9+x, column=3, sticky='NSWE')
-            self.itemLinha["state"] = DISABLED
+        self.itemLinha1 = Text(height=1 ,background='gray80', foreground='grey25', relief=FLAT, font=self.fontePadrao, width=10, state=DISABLED)
+        self.itemLinha1.grid(row=9, column=3, sticky='NSWE')
 
-            self.itemCateg = Text(height=1 ,background='gray80', foreground='grey25', relief=FLAT, font=self.fontePadrao)
-            self.itemCateg["width"] = 15
-            self.itemCateg.insert('insert', "Teste")
-            self.itemCateg.grid(row=9+x, column=4, sticky='NSWE')
-            self.itemCateg["state"] = DISABLED
+        self.itemCateg1 = Text(height=1 ,background='gray80', foreground='grey25', relief=FLAT, font=self.fontePadrao, width=10, state=DISABLED)
+        self.itemCateg1.grid(row=9, column=4, sticky='NSWE')
 
-            self.itemForn = Text(height=1 ,background='gray80', foreground='grey25', relief=FLAT, font=self.fontePadrao)
-            self.itemForn["width"] = 15
-            self.itemForn.insert('insert', "Teste")
-            self.itemForn.grid(row=9+x, column=5, sticky='NSWE')
-            self.itemForn["state"] = DISABLED
+        self.itemForn1 = Text(height=1 ,background='gray80', foreground='grey25', relief=FLAT, font=self.fontePadrao, width=10, state=DISABLED)
+        self.itemForn1.grid(row=9, column=5, sticky='NSWE')
 
-            self.itemQnt = Entry(textvariable=exec('siq'+str(x+1)), validate="focusout", validatecommand=self.funcaoteste)
-            self.itemQnt["width"] = 10
-            self.itemQnt["font"] = self.fontePadrao
-            self.itemQnt.grid(row=9+x, column=6, sticky='NSWE')
+        self.itemQntDisp1 = Text(height=1 ,background='gray80', foreground='grey25', relief=FLAT, font=self.fontePadrao, width=10, state=DISABLED)
+        self.itemQntDisp1.grid(row=9, column=7, sticky='NSWE')
 
-            self.itemQntDisp = Text(height=1 ,background='gray80', foreground='grey25', relief=FLAT, font=self.fontePadrao)
-            self.itemQntDisp["width"] = 15
-            self.itemQntDisp.insert('insert', "Teste")
-            self.itemQntDisp.grid(row=9+x, column=7, sticky='NSWE')
-            self.itemQntDisp["state"] = DISABLED
+        self.precoUnit1 = Text(height=1 ,background='gray80', foreground='grey25', relief=FLAT, font=self.fontePadrao, width=10, state=DISABLED)
+        self.precoUnit1.grid(row=9, column=8, sticky='NSWE')
 
-            self.precoUnit = Text(height=1 ,background='gray80', foreground='grey25', relief=FLAT, font=self.fontePadrao)
-            self.precoUnit["width"] = 15
-            self.precoUnit.insert('insert', "Teste")
-            self.precoUnit.grid(row=9+x, column=8, sticky='NSWE')
-            self.precoUnit["state"] = DISABLED            
+        self.desconto1 = Text(height=1 ,background='gray80', foreground='grey25', relief=FLAT, font=self.fontePadrao, width=10, state=DISABLED)
+        self.desconto1.grid(row=9, column=9, sticky='NSWE')
 
-            self.desconto = Text(height=1 ,background='gray80', foreground='grey25', relief=FLAT, font=self.fontePadrao)
-            self.desconto["width"] = 15
-            self.desconto.insert('insert', "Teste")
-            self.desconto.grid(row=9+x, column=9, sticky='NSWE')
-            self.desconto["state"] = DISABLED                
+        self.precoTotal1 = Text(height=1 ,background='gray80', foreground='grey25', relief=FLAT, font=self.fontePadrao, width=10, state=DISABLED)
+        self.precoTotal1.grid(row=9, column=11, sticky='NSWE')
 
-            self.precoPromoc = Entry(textvariable=exec('spp'+str(x+1)), validate="focusout", validatecommand=self.funcaoteste)
-            self.precoPromoc["width"] = 10
-            self.precoPromoc["font"] = self.fontePadrao
-            self.precoPromoc.grid(row=9+x, column=10, sticky='NSWE')
+        #Entrys:
+        self.itemCod1 = Entry(textvariable=sic1, validate="focusout", validatecommand=self.itemDesc1f, width=15, font=self.fontePadrao)
+        self.itemCod1.grid(row=9, column=1, sticky='NSWE')
 
-            self.precoTotal = Text(height=1 ,background='gray80', foreground='grey25', relief=FLAT, font=self.fontePadrao)
-            self.precoTotal["width"] = 15
-            self.precoTotal.insert('insert', "Teste")
-            self.precoTotal.grid(row=9+x, column=11, sticky='NSWE')
-            self.precoTotal["state"] = DISABLED 
+        self.itemQnt1 = Entry(textvariable=siq1, validate="focusout", validatecommand=self.itemQnt1f, width=10, font=self.fontePadrao)
+        self.itemQnt1.grid(row=9, column=6, sticky='NSWE')
+
+        self.precoPromoc1 = Entry(textvariable=spp1, validate="focusout", validatecommand=self.precoPromoc1f, width=10, font=self.fontePadrao)
+        self.precoPromoc1.grid(row=9, column=10, sticky='NSWE')
+
+
 
     #FUNÇÕES:
 
@@ -177,18 +151,57 @@ class Application:
             self.segmentoCliente["state"] = DISABLED                
         return True
 
-    def funcaoteste(self):
+    def itemDesc1f(self):
+        try:
+            itemdesc = databaseConnect.consulta_tabela(sic1.get(), "produtos", "descricao")[0]
+            itemLinha = databaseConnect.consulta_tabela(sic1.get(), "produtos", "linha")[0]
+            itemCateg = databaseConnect.consulta_tabela(sic1.get(), "produtos", "categoria")[0]
+            itemForn  = databaseConnect.consulta_tabela(sic1.get(), "produtos", "id_fornecedor")[0]
+        except:
+            itemdesc = ""
+            itemLinha = ""
+            itemCateg = ""
+            itemForn = ""
+        self.itemDesc1["state"] = NORMAL
+        self.itemDesc1.delete('1.0', END)        
+        self.itemDesc1.insert('insert', itemdesc)
+        self.itemDesc1["state"] = DISABLED
+        self.itemLinha1["state"] = NORMAL
+        self.itemLinha1.delete('1.0', END)        
+        self.itemLinha1.insert('insert', itemLinha)
+        self.itemLinha1["state"] = DISABLED       
+        self.itemCateg1["state"] = NORMAL
+        self.itemCateg1.delete('1.0', END)        
+        self.itemCateg1.insert('insert', itemCateg)
+        self.itemCateg1["state"] = DISABLED
+        self.itemForn1["state"] = NORMAL
+        self.itemForn1.delete('1.0', END)        
+        self.itemForn1.insert('insert', itemForn)
+        self.itemForn1["state"] = DISABLED  
+        
+        return True
+
+
+    def itemQnt1f(self):
+        return True
+
+
+    def precoPromoc1f(self):
         return True
 
 
 
-
-
 root = Tk()
-[sv0, sv1, sv2, sv3, sv4, sv5, sv6, sv7, sv8, sv9, sv10, sv11, sv12, sv13, sv14, sv15, sv16, sv17, sv18, sv19, sv20] = (StringVar(),)*21
-[sic1, sic2, sic3, sic4, sic5, sic6, sic7, sic8, sic9, sic10, sic11, sic12, sic13, sic14, sic15, sic16, sic17, sic18, sic19, sic20] = (StringVar(),)*20
-[siq1, siq2, siq3, siq4, siq5, siq6, siq7, siq8, siq9, siq10, siq11, siq12, siq13, siq14, siq15, siq16, siq17, siq18, siq19, siq20] = (StringVar(),)*20
-[spp1, spp2, spp3, spp4, spp5, spp6, spp7, spp8, spp9, spp10, spp11, spp12, spp13, spp14, spp15, spp16, spp17, spp18, spp19, spp20] = (StringVar(),)*20
+
+sv0 = StringVar()
+
+sic1 = StringVar()
+
+siq1 = StringVar()
+
+spp1 = StringVar()
+
+
 Application(root)
 root.title('PDV - Pedido de Venda')
 #root.geometry('400x300')
